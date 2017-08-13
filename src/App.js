@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import Header from 'grommet/components/Header';
 import Title from 'grommet/components/Title';
-import Table from 'grommet/components/Table';
-import TableRow from 'grommet/components/TableRow';
 import Split from 'grommet/components/Split';
 import Box from 'grommet/components/Box';
 import './App.css';
+import CoffeeTable from './component/coffeeTable/coffeeTable';
 
 class App extends Component {
     render() {
@@ -42,44 +41,5 @@ class App extends Component {
         );
     }
 }
-
-const CoffeeTable = () => {
-    return (
-        <Table selectable={true}>
-            <TableHeader/>
-            <tbody>
-                <TableRow>
-                    <td>
-                        {'1'}
-                    </td>
-                    <td>
-                        {'Cappuccino'}
-                    </td>
-                    <td className='secondary'>
-                        {'3'}
-                    </td>
-                </TableRow>
-            </tbody>
-        </Table>
-    );
-};
-
-const TableHeader = () => {
-    return (
-        <thead>
-            <tr>
-                <th>
-                    {'Id'}
-                </th>
-                <th>
-                    {'Name'}
-                </th>
-                <th>
-                    {'Price($)'}
-                </th>
-            </tr>
-        </thead>
-    );
-};
 
 export default App;
