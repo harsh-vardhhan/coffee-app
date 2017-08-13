@@ -10,7 +10,7 @@
         }
     },
     "parser": "babel-eslint",
-    "plugins": [
+    "plugins": [    
         "react"
     ],
     "env": {

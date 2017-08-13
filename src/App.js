@@ -46,19 +46,7 @@ class App extends Component {
 const CoffeeTable = () => {
     return (
         <Table selectable={true}>
-            <thead>
-                <tr>
-                    <th>
-                        {'Id'}
-                    </th>
-                    <th>
-                        {'Name'}
-                    </th>
-                    <th>
-                        {'Price($)'}
-                    </th>
-                </tr>
-            </thead>
+            <TableHeader/>
             <tbody>
                 <TableRow>
                     <td>
@@ -73,6 +61,24 @@ const CoffeeTable = () => {
                 </TableRow>
             </tbody>
         </Table>
+    );
+};
+
+const TableHeader = () => {
+    return (
+        <thead>
+            <tr>
+                <th>
+                    {'Id'}
+                </th>
+                <th>
+                    {'Name'}
+                </th>
+                <th>
+                    {'Price($)'}
+                </th>
+            </tr>
+        </thead>
     );
 };
 
