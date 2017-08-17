@@ -1,25 +1,35 @@
 import React from 'react';
-import CoffeeTableHeader from './coffeeTableHeader';
+import PropTypes from 'prop-types';
 import Table from 'grommet/components/Table';
 import TableRow from 'grommet/components/TableRow';
+import CoffeeTableHeader from './coffeeTableHeader';
 
-const CoffeeTable = () => (
+const CoffeeTable = ({coffee}) => (
     <Table selectable={true}>
         <CoffeeTableHeader/>
         <tbody>
-            <TableRow>
-                <td>
-                    {'1'}
-                </td>
-                <td>
-                    {'Cappuccino'}
-                </td>
-                <td className='secondary'>
-                    {'3'}
-                </td>
-            </TableRow>
+            {coffee.map((value, i) => {
+                return (
+                    <TableRow key={i}>
+                        <td>
+                            {value.id}
+                        </td>
+                        <td>
+                            {value.name}
+                        </td>
+                        <td className='secondary'>
+                            {value.price}
+                        </td>
+                    </TableRow>
+                );
+            })}
+
         </tbody>
     </Table>
 );
+
+CoffeeTable.propTypes = {
+    coffee: PropTypes.array
+};
 
 export default CoffeeTable;

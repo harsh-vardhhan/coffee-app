@@ -1,19 +1,26 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 import Header from 'grommet/components/Header';
-import Title from 'grommet/components/Title';
 import Split from 'grommet/components/Split';
 import Box from 'grommet/components/Box';
-import './App.css';
 import CoffeeTable from './component/coffeeTable/coffeeTable';
+import {getCoffees} from './actions/coffee';
 
 class App extends Component {
+
+    componentDidMount() {
+        this.props.actions.getCoffees();
+    }
+
     render() {
         return (
             <div className='App'>
                 <Header>
-                    <Title>
+                    <h1>
                         {'Coffee Shop'}
-                    </Title>
+                    </h1>
                 </Header>
                 <Split
                     fixed={false}
@@ -29,7 +36,7 @@ class App extends Component {
                         align='center'
                         pad='medium'
                     >
-                        <CoffeeTable/>
+                        <CoffeeTable coffee={this.props.coffee}/>
                     </Box>
                     <Box
                         justify='center'
@@ -42,4 +49,28 @@ class App extends Component {
     }
 }
 
-export default App;
+App.propTypes = {
+    coffee: PropTypes.array,
+    actions: PropTypes.shape({
+        getCoffees: PropTypes.func.isRequired
+    })
+};
+
+const mapStateToProps = (state) => {
+    return {
+        coffee: state.coffee
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: bindActionCreators({
+            getCoffees
+        }, dispatch)
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
