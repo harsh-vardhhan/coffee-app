@@ -1,8 +1,9 @@
 import coffeeApi from '../api/coffee';
+import {CoffeeTypes} from '../constants';
 
-export function getCoffees() {
-    return async (dispatch) => {
+export const getCoffees = () => (
+    async (dispatch) => {
         const coffee = await coffeeApi.getCoffees();
-        return dispatch({type: 'GET_COFFEES', coffee});
-    };
-}
+        dispatch({type: CoffeeTypes.GET_COFFEES, coffee});
+    }
+);
