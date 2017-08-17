@@ -3,5 +3,15 @@
       "id":1,
       "name":"cappuccino",
       "price":3.45
+    },
+    {
+      "id":2,
+      "name":"latte",
+      "price":4.25
+    },
+    {
+      "id":3,
+      "name":"mocha",
+      "price":2.75
     }
 ]

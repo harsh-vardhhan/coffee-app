@@ -1,4 +1,4 @@
-const coffeeUrl = 'http://www.mocky.io/v2/599566d7110000821072334d';
+const coffeeUrl = 'http://www.mocky.io/v2/59958469110000b300cc4216';
 
 class coffeeApi {
 
