@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import Header from 'grommet/components/Header';
 import Split from 'grommet/components/Split';
 import Box from 'grommet/components/Box';
+import Button from 'grommet/components/Button';
 import CoffeeTable from './component/coffeeTable/coffeeTable';
 import {getCoffees} from './actions/coffee';
 
@@ -17,11 +18,7 @@ class App extends Component {
     render() {
         return (
             <div className='App'>
-                <Header>
-                    <h1>
-                        {'Coffee Shop'}
-                    </h1>
-                </Header>
+                <AppHeader/>
                 <Split
                     fixed={false}
                     flex='right'
@@ -30,24 +27,53 @@ class App extends Component {
                         justify='center'
                         align='center'
                         pad='medium'
-                    />
-                    <Box
-                        justify='center'
-                        align='center'
-                        pad='medium'
                     >
+                        <ActionButtons/>
                         <CoffeeTable coffee={this.props.coffee}/>
                     </Box>
-                    <Box
-                        justify='center'
-                        align='center'
-                        pad='medium'
-                    />
+                    <Form/>
                 </Split>
             </div>
         );
     }
 }
+
+const Form = () => (
+    <Box
+        justify='center'
+        align='center'
+        pad='medium'
+    >
+        <h3>{'Form'}</h3>
+    </Box>
+);
+
+const AppHeader = () => (
+    <Header>
+        <h1>{'Coffee Shop'}</h1>
+    </Header>
+);
+
+const ActionButtons = () => {
+    return (
+        <Box
+            justify='center'
+            align='center'
+            pad='medium'
+            direction='row'
+        >
+            <Button
+                label='Add'
+                href='#'
+            />
+            <Button
+                label='Delete'
+                href='#'
+            />
+            <br/>
+        </Box>
+    );
+};
 
 App.propTypes = {
     coffee: PropTypes.array,
