@@ -23,7 +23,6 @@ const CoffeeTable = ({coffee}) => (
                     </TableRow>
                 );
             })}
-
         </tbody>
     </Table>
 );
