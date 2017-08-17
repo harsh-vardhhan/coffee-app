@@ -80,19 +80,15 @@ App.propTypes = {
     })
 };
 
-const mapStateToProps = (state) => {
-    return {
-        coffee: state.coffee
-    };
-};
+const mapStateToProps = (state) => ({
+    coffee: state.coffee
+});
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        actions: bindActionCreators({
-            getCoffees
-        }, dispatch)
-    };
-};
+const mapDispatchToProps = (dispatch) => ({
+    actions: bindActionCreators({
+        getCoffees
+    }, dispatch)
+});
 
 export default connect(
     mapStateToProps,
