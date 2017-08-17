@@ -11,15 +11,9 @@ const CoffeeTable = ({coffee}) => (
             {coffee.map((value, i) => {
                 return (
                     <TableRow key={i}>
-                        <td>
-                            {value.id}
-                        </td>
-                        <td>
-                            {value.name}
-                        </td>
-                        <td className='secondary'>
-                            {value.price}
-                        </td>
+                        <td>{value.id}</td>
+                        <td>{value.name}</td>
+                        <td>{value.price}</td>
                     </TableRow>
                 );
             })}
