@@ -54,26 +54,24 @@ const AppHeader = () => (
     </Header>
 );
 
-const ActionButtons = () => {
-    return (
-        <Box
-            justify='center'
-            align='center'
-            pad='medium'
-            direction='row'
-        >
-            <Button
-                label='Add'
-                href='#'
-            />
-            <Button
-                label='Delete'
-                href='#'
-            />
-            <br/>
-        </Box>
-    );
-};
+const ActionButtons = () => (
+    <Box
+        justify='center'
+        align='center'
+        pad='medium'
+        direction='row'
+    >
+        <Button
+            label='Add'
+            href='#'
+        />
+        <Button
+            label='Delete'
+            href='#'
+        />
+        <br/>
+    </Box>
+);
 
 App.propTypes = {
     coffee: PropTypes.array,
