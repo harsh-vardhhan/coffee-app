@@ -7,3 +7,9 @@ export const getCoffees = () => (
         dispatch({type: CoffeeTypes.GET_COFFEES, coffee});
     }
 );
+
+export const addCoffees = (coffee) => (
+    async (dispatch) => {
+        dispatch({type: CoffeeTypes.ADD_COFFEE, coffee});
+    }
+);
