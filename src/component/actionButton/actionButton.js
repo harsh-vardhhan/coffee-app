@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 
-const ActionButtons = ({addCoffee, deleteCoffee}) => (
+const ActionButtons = ({addCoffee, deleteCoffee, editCoffee}) => (
     <Box
         justify='center'
         align='center'
@@ -23,6 +23,7 @@ const ActionButtons = ({addCoffee, deleteCoffee}) => (
         <Button
             label='Save'
             href='#'
+            onClick={editCoffee}
         />
         <br/>
     </Box>
@@ -30,7 +31,8 @@ const ActionButtons = ({addCoffee, deleteCoffee}) => (
 
 ActionButtons.propTypes = {
     addCoffee: PropTypes.func,
-    deleteCoffee: PropTypes.func
+    deleteCoffee: PropTypes.func,
+    editCoffee: PropTypes.func
 };
 
 export default ActionButtons;
