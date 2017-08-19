@@ -89,7 +89,7 @@ class App extends Component<Props, State> {
 
 App.propTypes = {
     coffee: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        id: PropTypes.number,
         name: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired
     })),
