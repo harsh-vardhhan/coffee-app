@@ -15,7 +15,7 @@ class App extends Component {
         super(props);
         this.state = {
             name: '',
-            price: '1',
+            price: '',
             selectedCoffee: -1
         };
     }
@@ -27,8 +27,15 @@ class App extends Component {
     setName = (name) => this.setState({name});
     setPrice = (price) => this.setState({price});
     addCoffee = () => this.props.actions.addCoffees(this.state);
-    deleteCoffee = () => this.props.actions.deleteCoffees(this.state.selectedCoffee);
     editCoffee = () => this.props.actions.editCoffees(this.state);
+    deleteCoffee = () => {
+        this.props.actions.deleteCoffees(this.state.selectedCoffee);
+        this.setState({
+            name: '',
+            price: '',
+            selectedCoffee: -1
+        });
+    };
     selectCoffee = (selectedCoffee) => {
         const price = (this.props.coffee[selectedCoffee].price).toString();
         const name = this.props.coffee[selectedCoffee].name;
