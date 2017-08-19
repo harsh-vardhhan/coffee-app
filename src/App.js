@@ -7,7 +7,7 @@ import Box from 'grommet/components/Box';
 import CoffeeList from './component/coffeeTable/coffeeList';
 import Form from './component/form/form';
 import AppHeader from './component/appHeader';
-import {getCoffees, addCoffees} from './actions/coffee';
+import {getCoffees, addCoffees, deleteCoffees} from './actions/coffee';
 
 class App extends Component {
 
@@ -15,7 +15,8 @@ class App extends Component {
         super(props);
         this.state = {
             name: '',
-            price: '1'
+            price: '1',
+            selectedCoffee: 0
         };
     }
 
@@ -26,6 +27,8 @@ class App extends Component {
     setName = (name) => this.setState({name});
     setPrice = (price) => this.setState({price});
     addCoffee = () => this.props.actions.addCoffees(this.state);
+    deleteCoffee = () => this.props.actions.deleteCoffees(this.state.selectedCoffee);
+    selectCoffee = (selectedCoffee) => this.setState({selectedCoffee})
 
     render() {
         return (
@@ -37,7 +40,9 @@ class App extends Component {
                 >
                     <CoffeeList
                         coffee={this.props.coffee}
+                        deleteCoffee={this.deleteCoffee}
                         addCoffee={this.addCoffee}
+                        selectCoffee={this.selectCoffee}
                     />
                     <Form
                         name={this.state.name}
@@ -60,7 +65,8 @@ App.propTypes = {
     coffee: PropTypes.array,
     actions: PropTypes.shape({
         getCoffees: PropTypes.func.isRequired,
-        addCoffees: PropTypes.func.isRequired
+        addCoffees: PropTypes.func.isRequired,
+        deleteCoffees: PropTypes.func.isRequired
     })
 };
 
@@ -71,7 +77,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators({
         getCoffees,
-        addCoffees
+        addCoffees,
+        deleteCoffees
     }, dispatch)
 });
 

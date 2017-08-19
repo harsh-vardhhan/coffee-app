@@ -4,8 +4,11 @@ import Table from 'grommet/components/Table';
 import TableRow from 'grommet/components/TableRow';
 import CoffeeTableHeader from './coffeeTableHeader';
 
-const CoffeeTable = ({coffee}) => (
-    <Table selectable={true}>
+const CoffeeTable = ({coffee, selectCoffee}) => (
+    <Table
+        selectable={true}
+        onSelect={selectCoffee}
+    >
         <CoffeeTableHeader/>
         <tbody>
             {coffee.map((value, i) => {
@@ -21,7 +24,8 @@ const CoffeeTable = ({coffee}) => (
 );
 
 CoffeeTable.propTypes = {
-    coffee: PropTypes.array
+    coffee: PropTypes.array,
+    selectCoffee: PropTypes.func
 };
 
 export default CoffeeTable;

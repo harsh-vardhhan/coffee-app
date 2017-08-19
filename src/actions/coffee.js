@@ -13,3 +13,9 @@ export const addCoffees = (coffee) => (
         dispatch({type: CoffeeTypes.ADD_COFFEE, coffee});
     }
 );
+
+export const deleteCoffees = (coffee) => (
+    async (dispatch) => {
+        dispatch({type: CoffeeTypes.DELETE_COFFEE, coffee});
+    }
+);
