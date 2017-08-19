@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import Header from 'grommet/components/Header';
 import Split from 'grommet/components/Split';
 import Box from 'grommet/components/Box';
-import CoffeeTable from './component/coffeeTable/coffeeTable';
+import CoffeeList from './component/coffeeTable/coffeeList';
 import Form from './component/form/form';
-import ActionButton from './component/actionButton/actionButton';
+import AppHeader from './component/appHeader';
 import {getCoffees, addCoffees} from './actions/coffee';
 
 class App extends Component {
@@ -56,28 +55,6 @@ class App extends Component {
         );
     }
 }
-
-const CoffeeList = ({coffee, addCoffee}) => (
-    <Box
-        justify='center'
-        align='center'
-        pad='medium'
-    >
-        <ActionButton addCoffee={addCoffee}/>
-        <CoffeeTable coffee={coffee}/>
-    </Box>
-);
-
-CoffeeList.propTypes = {
-    coffee: PropTypes.array,
-    addCoffee: PropTypes.func
-};
-
-const AppHeader = () => (
-    <Header>
-        <h1>{'Coffee Shop'}</h1>
-    </Header>
-);
 
 App.propTypes = {
     coffee: PropTypes.array,
