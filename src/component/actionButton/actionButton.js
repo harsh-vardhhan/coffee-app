@@ -20,6 +20,10 @@ const ActionButtons = ({addCoffee, deleteCoffee}) => (
             href='#'
             onClick={deleteCoffee}
         />
+        <Button
+            label='Save'
+            href='#'
+        />
         <br/>
     </Box>
 );
