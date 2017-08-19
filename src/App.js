@@ -9,8 +9,21 @@ import Form from './component/form/form';
 import AppHeader from './component/appHeader';
 import {getCoffees, addCoffees, deleteCoffees, editCoffees} from './actions/coffee';
 
-class App extends Component {
+type State = {
+    name: string,
+    price: string,
+    selectedCoffee: number
+}
 
+type Props = {
+    coffee: {
+        id: number,
+        name: string,
+        price: string
+    }
+}
+
+class App extends Component<Props, State> {
     constructor(props) {
         super(props);
         this.state = {
@@ -36,7 +49,7 @@ class App extends Component {
             selectedCoffee: -1
         });
     };
-    selectCoffee = (selectedCoffee) => {
+    selectCoffee = (selectedCoffee: number) => {
         const price = (this.props.coffee[selectedCoffee].price).toString();
         const name = this.props.coffee[selectedCoffee].name;
         this.setState({selectedCoffee, name, price});
@@ -75,7 +88,11 @@ class App extends Component {
 }
 
 App.propTypes = {
-    coffee: PropTypes.array,
+    coffee: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired
+    })),
     actions: PropTypes.shape({
         getCoffees: PropTypes.func.isRequired,
         addCoffees: PropTypes.func.isRequired,
