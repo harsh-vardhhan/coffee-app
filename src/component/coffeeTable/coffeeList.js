@@ -4,22 +4,28 @@ import Box from 'grommet/components/Box';
 import ActionButton from '../actionButton/actionButton';
 import CoffeeTable from '../coffeeTable/coffeeTable';
 
-const CoffeeList = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}) => (
-    <Box
-        justify='center'
-        align='center'
-        pad='medium'
-    >
-        <ActionButton
-            addCoffee={addCoffee}
-            deleteCoffee={deleteCoffee}
-            editCoffee={editCoffee}
-        />
-        <CoffeeTable
-            coffee={coffee}
-            selectCoffee={selectCoffee}
-        />
-    </Box>
+type Coffee = Array<{
+    name: string,
+    price: string
+}>
+
+const CoffeeList = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}:
+    {coffee: Coffee}) => (
+        <Box
+            justify='center'
+            align='center'
+            pad='medium'
+        >
+            <ActionButton
+                addCoffee={addCoffee}
+                deleteCoffee={deleteCoffee}
+                editCoffee={editCoffee}
+            />
+            <CoffeeTable
+                coffee={coffee}
+                selectCoffee={selectCoffee}
+            />
+        </Box>
 );
 
 CoffeeList.propTypes = {
