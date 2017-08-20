@@ -4,7 +4,7 @@ import {CoffeeTypes} from '../constants';
 type Coffee = {
     name: string,
     price: string
-}
+};
 
 export const getCoffees = () => (
     async (dispatch) => {

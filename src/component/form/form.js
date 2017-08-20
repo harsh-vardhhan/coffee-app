@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import Box from 'grommet/components/Box';
@@ -8,6 +9,18 @@ import NumberInput from 'grommet/components/NumberInput';
 type TypeForm = {
     name: string,
     price: number
+};
+
+type TypeName = {
+    target: {
+        value: string
+    }
+};
+
+type TypePrice = {
+    target: {
+        value: string
+    }
 };
 
 const Form = ({name, price, setName, setPrice}: TypeForm) => (
@@ -21,14 +34,14 @@ const Form = ({name, price, setName, setPrice}: TypeForm) => (
             <TextInput
                 value={name}
                 placeHolder='Name'
-                onDOMChange={(_name) => setName(_name.target.value)}
+                onDOMChange={(_name: TypeName) => setName(_name.target.value)}
             />
         </FormField>
         <FormField>
             <NumberInput
                 value={price}
                 type='number'
-                onChange={(_price) => setPrice(_price.target.value)}
+                onChange={(_price: TypePrice) => setPrice(_price.target.value)}
             />
         </FormField>
     </Box>

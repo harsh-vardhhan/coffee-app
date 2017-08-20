@@ -17,14 +17,13 @@ type State = {
 
 type Props = {
     coffee: {
-        id: number,
         name: string,
         price: string
     }
 };
 
 class App extends Component<Props, State> {
-    constructor(props) {
+    constructor(props: Props) {
         super(props);
         this.state = {
             name: '',
@@ -42,7 +41,7 @@ class App extends Component<Props, State> {
         if (newPrice === '') {
             this.setState({price: 0});
         } else {
-            const price = parseFloat(newPrice, 2);
+            const price: number = parseFloat(newPrice, 2);
             this.setState({price});
         }
     };
