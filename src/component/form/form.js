@@ -31,7 +31,7 @@ const Form = ({name, price, setName, setPrice}) => (
 
 Form.propTypes = {
     name: PropTypes.string,
-    price: PropTypes.string,
+    price: PropTypes.number,
     setName: PropTypes.func,
     setPrice: PropTypes.func
 };
