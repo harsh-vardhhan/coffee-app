@@ -4,13 +4,15 @@ import Box from 'grommet/components/Box';
 import ActionButton from '../actionButton/actionButton';
 import CoffeeTable from '../coffeeTable/coffeeTable';
 
-type Coffee = Array<{
-    name: string,
-    price: string
-}>
+type TypeCoffeeList = {
+    coffee: Array<{
+        name: string,
+        price: string
+    }>
+};
 
 const CoffeeList = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}:
-    {coffee: Coffee}) => (
+    TypeCoffeeList) => (
         <Box
             justify='center'
             align='center'

@@ -5,7 +5,12 @@ import TextInput from 'grommet/components/TextInput';
 import FormField from 'grommet/components/FormField';
 import NumberInput from 'grommet/components/NumberInput';
 
-const Form = ({name, price, setName, setPrice}) => (
+type TypeForm = {
+    name: string,
+    price: number
+};
+
+const Form = ({name, price, setName, setPrice}: TypeForm) => (
     <Box
         justify='center'
         align='center'

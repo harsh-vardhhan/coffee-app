@@ -13,7 +13,7 @@ type State = {
     name: string,
     price: string,
     selectedCoffee: number
-}
+};
 
 type Props = {
     coffee: {
@@ -21,7 +21,7 @@ type Props = {
         name: string,
         price: string
     }
-}
+};
 
 class App extends Component<Props, State> {
     constructor(props) {

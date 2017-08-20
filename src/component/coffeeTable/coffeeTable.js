@@ -4,12 +4,14 @@ import Table from 'grommet/components/Table';
 import TableRow from 'grommet/components/TableRow';
 import CoffeeTableHeader from './coffeeTableHeader';
 
-type Coffee = Array<{
-    name: string,
-    price: string
-}>
+type TypeCoffeTable = {
+    coffee : Array<{
+        name: string,
+        price: string
+    }>
+};
 
-const CoffeeTable = ({coffee, selectCoffee}: {coffee: Coffee}) => (
+const CoffeeTable = ({coffee, selectCoffee}: TypeCoffeTable) => (
     <Table
         selectable={true}
         onSelect={selectCoffee}
