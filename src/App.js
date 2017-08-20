@@ -37,8 +37,8 @@ class App extends Component<Props, State> {
         this.props.actions.getCoffees();
     }
 
-    setName = (name) => this.setState({name});
-    setPrice = (price) => this.setState({price});
+    setName = (name: string) => this.setState({name});
+    setPrice = (price: string) => this.setState({price});
     addCoffee = () => this.props.actions.addCoffees(this.state);
     editCoffee = () => this.props.actions.editCoffees(this.state);
     deleteCoffee = () => {
@@ -50,8 +50,8 @@ class App extends Component<Props, State> {
         });
     };
     selectCoffee = (selectedCoffee: number) => {
-        const price = (this.props.coffee[selectedCoffee].price).toString();
-        const name = this.props.coffee[selectedCoffee].name;
+        const price: number = (this.props.coffee[selectedCoffee].price).toString();
+        const name: string = this.props.coffee[selectedCoffee].name;
         this.setState({selectedCoffee, name, price});
     }
 
