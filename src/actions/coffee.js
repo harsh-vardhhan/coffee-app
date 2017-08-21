@@ -14,19 +14,19 @@ export const getCoffees = () => (
 );
 
 export const addCoffees = (coffee: Coffee) => (
-    async (dispatch) => {
+    (dispatch) => {
         dispatch({type: ADD_COFFEE, coffee});
     }
 );
 
 export const deleteCoffees = (coffee: number) => (
-    async (dispatch) => {
+    (dispatch) => {
         dispatch({type: DELETE_COFFEE, coffee});
     }
 );
 
 export const editCoffees = (coffee: Coffee) => (
-    async (dispatch) => {
+    (dispatch) => {
         dispatch({type: EDIT_COFFEE, coffee});
     }
 );
