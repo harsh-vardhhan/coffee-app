@@ -11,7 +11,7 @@ import {getCoffees, addCoffees, deleteCoffees, editCoffees} from './actions/coff
 
 type State = {
     name: string,
-    price: string,
+    price: number,
     selectedCoffee: number
 };
 

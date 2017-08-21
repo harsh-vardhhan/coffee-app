@@ -1,9 +1,5 @@
 const coffeeUrl: string = 'http://www.mocky.io/v2/59958469110000b300cc4216';
-
-type Coffee = Array<{
-    name: string,
-    price: string
-}>
+import type {Coffees} from '../types/Coffees';
 
 class coffeeApi {
 
@@ -14,7 +10,7 @@ class coffeeApi {
                 'Content-Type': 'application/json'
             }
         }).then((response) =>
-            (response.json()).then((coffees: Coffee) => coffees)
+            (response.json()).then((coffees: Coffees) => coffees)
         );
     }
 }

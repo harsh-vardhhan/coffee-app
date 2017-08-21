@@ -1,14 +1,11 @@
 import coffeeApi from '../api/coffee';
 import {ADD_COFFEE, DELETE_COFFEE, EDIT_COFFEE, GET_COFFEES} from '../constants/coffee';
-
-type Coffee = {
-    name: string,
-    price: string
-};
+import type {Coffee} from '../types/Coffee';
+import type {Coffees} from '../types/Coffees';
 
 export const getCoffees = () => (
     async (dispatch) => {
-        const coffees = await coffeeApi.getCoffees();
+        const coffees: Coffees = await coffeeApi.getCoffees();
         dispatch({type: GET_COFFEES, coffees});
     }
 );
