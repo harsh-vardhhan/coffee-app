@@ -3,7 +3,7 @@ import {ADD_COFFEE, DELETE_COFFEE, EDIT_COFFEE, GET_COFFEES} from '../constants/
 import type {Action} from '../types/Action';
 import type {State} from '../types/State';
 
-export function coffee(state: State = [], action: Action) {
+export const coffee = (state: State = [], action: Action) => {
     switch (action.type) {
     case GET_COFFEES:
         return action.coffees;
@@ -21,4 +21,4 @@ export function coffee(state: State = [], action: Action) {
     default:
         return state;
     }
-}
+};

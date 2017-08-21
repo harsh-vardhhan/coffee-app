@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
-export default function configureStore(initialState) {
-    return createStore(
+const configureStore = (initialState) => (
+    createStore(
         rootReducer,
         initialState,
         composeWithDevTools(applyMiddleware(thunk))
-    );
-}
+    )
+);
+
+export default configureStore;
