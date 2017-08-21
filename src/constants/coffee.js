@@ -1,10 +1,4 @@
-import keyMirror from './keyMirror';
-
-const CoffeeTypes = keyMirror({
-    GET_COFFEES: null,
-    ADD_COFFEE: null,
-    DELETE_COFFEE: null,
-    EDIT_COFFEE: null
-});
-
-export default CoffeeTypes;
+export const GET_COFFEES: string = 'GET_COFFEES';
+export const ADD_COFFEE: string = 'ADD_COFFEE';
+export const DELETE_COFFEE: string = 'DELETE_COFFEE';
+export const EDIT_COFFEE: string = 'EDIT_COFFEE';
