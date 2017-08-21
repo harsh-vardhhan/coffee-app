@@ -1,5 +1,5 @@
-const coffeeUrl: string = 'http://www.mocky.io/v2/59958469110000b300cc4216';
 import type {Coffees} from '../types/Coffees';
+const coffeeUrl: string = 'http://www.mocky.io/v2/59958469110000b300cc4216';
 
 class coffeeApi {
     static getCoffees() {
