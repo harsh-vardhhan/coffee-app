@@ -8,8 +8,8 @@ type Coffee = {
 
 export const getCoffees = () => (
     async (dispatch) => {
-        const coffee = await coffeeApi.getCoffees();
-        dispatch({type: GET_COFFEES, coffee});
+        const coffees = await coffeeApi.getCoffees();
+        dispatch({type: GET_COFFEES, coffees});
     }
 );
 

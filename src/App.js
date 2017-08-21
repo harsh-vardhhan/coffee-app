@@ -9,6 +9,8 @@ import Form from './component/form/form';
 import AppHeader from './component/appHeader';
 import {getCoffees, addCoffees, deleteCoffees, editCoffees} from './actions/coffee';
 
+//@flow
+
 type State = {
     name: string,
     price: string,
