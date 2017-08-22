@@ -5,4 +5,4 @@ The project aims to provide the best practices for creating a React project. It 
 download the project & npm install in the project directory
 
 # Run
-- npm start - in the command line in the project directory
+npm start in the command line in the project directory
