@@ -4,5 +4,8 @@ The project aims to provide the best practices for creating a React project. It 
 # Setup
 download the project & npm install in the project directory
 
+# Setup Mock API
+download the project & npm install in the project directory
+
 # Run
 npm start in the command line in the project directory
