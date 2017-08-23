@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {bindActionCreators} from 'redux';
+import {bindActionCreators, type Dispatch} from 'redux';
 import {connect} from 'react-redux';
 import Split from 'grommet/components/Split';
 import Box from 'grommet/components/Box';
@@ -111,7 +111,7 @@ const mapStateToProps: {coffee: Props} = (state: Props) => ({
     coffee: state.coffee
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Dispatch<*>) => ({
     actions: bindActionCreators({
         getCoffees,
         addCoffees,
