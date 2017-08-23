@@ -107,7 +107,7 @@ App.propTypes = {
     })
 };
 
-const mapStateToProps = (state: Props) => ({
+const mapStateToProps: {coffee: Props} = (state: Props) => ({
     coffee: state.coffee
 });
 
