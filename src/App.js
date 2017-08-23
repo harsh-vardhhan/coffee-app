@@ -16,10 +16,10 @@ type State = {
 };
 
 type Props = {
-    coffee: {
+    coffee: Array<{
         name: string,
         price: string
-    }
+    }>
 };
 
 class App extends Component<Props, State> {
@@ -36,8 +36,8 @@ class App extends Component<Props, State> {
         this.props.actions.getCoffees();
     }
 
-    setName = (name: string) => this.setState({name});
-    setPrice = (newPrice: string) => {
+    setName: void = (name: string) => this.setState({name});
+    setPrice: void = (newPrice: string) => {
         if (newPrice === '') {
             this.setState({price: 0});
         } else {
@@ -45,9 +45,9 @@ class App extends Component<Props, State> {
             this.setState({price});
         }
     };
-    addCoffee = () => this.props.actions.addCoffees(this.state);
-    editCoffee = () => this.props.actions.editCoffees(this.state);
-    deleteCoffee = () => {
+    addCoffee: void = () => this.props.actions.addCoffees(this.state);
+    editCoffee: void = () => this.props.actions.editCoffees(this.state);
+    deleteCoffee: void = () => {
         this.props.actions.deleteCoffees(this.state.selectedCoffee);
         this.setState({
             name: '',
@@ -55,8 +55,8 @@ class App extends Component<Props, State> {
             selectedCoffee: -1
         });
     };
-    selectCoffee = (selectedCoffee: number) => {
-        const price: string = (this.props.coffee[selectedCoffee].price);
+    selectCoffee: void = (selectedCoffee: number) => {
+        const price: string = this.props.coffee[selectedCoffee].price;
         const name: string = this.props.coffee[selectedCoffee].name;
         this.setState({selectedCoffee, name, price});
     }
@@ -107,7 +107,7 @@ App.propTypes = {
     })
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: Props) => ({
     coffee: state.coffee
 });
 
