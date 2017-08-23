@@ -11,23 +11,29 @@ type TypeCoffeeList = {
     }>
 };
 
-const CoffeeList: React.Component<any> = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}:
-    TypeCoffeeList) => (
-        <Box
-            justify='center'
-            align='center'
-            pad='medium'
-        >
-            <ActionButton
-                addCoffee={addCoffee}
-                deleteCoffee={deleteCoffee}
-                editCoffee={editCoffee}
-            />
-            <CoffeeTable
-                coffee={coffee}
-                selectCoffee={selectCoffee}
-            />
-        </Box>
+const CoffeeList: React.Component<any> = ({
+    coffee,
+    addCoffee,
+    deleteCoffee,
+    editCoffee,
+    selectCoffee
+}: TypeCoffeeList
+) => (
+    <Box
+        justify='center'
+        align='center'
+        pad='medium'
+    >
+        <ActionButton
+            addCoffee={addCoffee}
+            deleteCoffee={deleteCoffee}
+            editCoffee={editCoffee}
+        />
+        <CoffeeTable
+            coffee={coffee}
+            selectCoffee={selectCoffee}
+        />
+    </Box>
 );
 
 CoffeeList.propTypes = {
