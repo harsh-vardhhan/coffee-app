@@ -1,5 +1,5 @@
 import React from 'react';
-const CoffeeTableHeader = () => (
+const CoffeeTableHeader: React.Component<any> = () => (
     <thead>
         <tr>
             <th>{'Name'}</th>

@@ -7,11 +7,11 @@ import CoffeeTable from '../coffeeTable/coffeeTable';
 type TypeCoffeeList = {
     coffee: Array<{
         name: string,
-        price: string
+        price: number
     }>
 };
 
-const CoffeeList = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}:
+const CoffeeList: React.Component<any> = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}:
     TypeCoffeeList) => (
         <Box
             justify='center'

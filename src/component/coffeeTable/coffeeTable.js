@@ -7,18 +7,23 @@ import CoffeeTableHeader from './coffeeTableHeader';
 type TypeCoffeTable = {
     coffee : Array<{
         name: string,
-        price: string
+        price: number
     }>
 };
 
-const CoffeeTable = ({coffee, selectCoffee}: TypeCoffeTable) => (
+type TypeValue = {
+    name: string,
+    price: number
+};
+
+const CoffeeTable: React.Component<any> = ({coffee, selectCoffee}: TypeCoffeTable) => (
     <Table
         selectable={true}
         onSelect={selectCoffee}
     >
         <CoffeeTableHeader/>
         <tbody>
-            {coffee.map((value, i) => {
+            {coffee.map((value: TypeValue, i: number) => {
                 return (
                     <TableRow key={i}>
                         <td>{value.name}</td>
