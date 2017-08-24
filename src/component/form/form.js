@@ -22,7 +22,7 @@ type TypePrice = {
     }
 };
 
-const Form: React.Component<any> = ({name, price, setName, setPrice}: TypeForm) => (
+const Form = ({name, price, setName, setPrice}: TypeForm) => (
     <Box
         justify='center'
         align='center'
