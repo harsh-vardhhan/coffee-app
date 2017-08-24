@@ -11,7 +11,7 @@ type TypeCoffeeList = {
     }>
 };
 
-const CoffeeList = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}:
+const CoffeeList: React.Component<any> = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}:
     TypeCoffeeList) => (
         <Box
             justify='center'

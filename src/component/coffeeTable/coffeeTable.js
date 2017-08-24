@@ -16,7 +16,7 @@ type TypeValue = {
     price: number
 };
 
-const CoffeeTable = ({coffee, selectCoffee}: TypeCoffeTable) => (
+const CoffeeTable: React.Component<any> = ({coffee, selectCoffee}: TypeCoffeTable) => (
     <Table
         selectable={true}
         onSelect={selectCoffee}

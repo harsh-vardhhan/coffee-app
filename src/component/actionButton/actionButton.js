@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 
-const ActionButtons = ({addCoffee, deleteCoffee, editCoffee}) => (
+const ActionButtons: React.Component<any> = ({addCoffee, deleteCoffee, editCoffee}) => (
     <Box
         justify='center'
         align='center'
