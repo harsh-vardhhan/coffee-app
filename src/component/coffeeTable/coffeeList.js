@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {type Component} from 'react';
 import PropTypes from 'prop-types';
 import Box from 'grommet/components/Box';
 import ActionButton from '../actionButton/actionButton';
@@ -11,7 +11,7 @@ type TypeCoffeeList = {
     }>
 };
 
-const CoffeeList: React.Component<any> = ({
+const CoffeeList: Component<any> = ({
     coffee,
     addCoffee,
     deleteCoffee,

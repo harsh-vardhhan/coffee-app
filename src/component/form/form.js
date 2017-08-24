@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {type Component} from 'react';
 import PropTypes from 'prop-types';
 import Box from 'grommet/components/Box';
 import TextInput from 'grommet/components/TextInput';
@@ -22,7 +22,7 @@ type TypePrice = {
     }
 };
 
-const Form: React.Component<any> = ({name, price, setName, setPrice}: TypeForm) => (
+const Form: Component<any> = ({name, price, setName, setPrice}: TypeForm) => (
     <Box
         justify='center'
         align='center'
