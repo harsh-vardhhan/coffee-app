@@ -38,15 +38,21 @@ class App extends Component<Props, State> {
 
     setName: void = (name: string) => this.setState({name});
     setPrice: void = (newPrice: string) => {
-        if (newPrice === '') {
-            this.setState({price: 0});
-        } else {
+        if (newPrice) {
             const price: number = parseFloat(newPrice, 2);
             this.setState({price});
         }
     };
-    addCoffee: void = () => this.props.actions.addCoffees(this.state);
-    editCoffee: void = () => this.props.actions.editCoffees(this.state);
+    addCoffee: void = () => {
+        if (this.state.name && this.state.price) {
+            this.props.actions.addCoffees(this.state);
+        }
+    }
+    editCoffee: void = () => {
+        if (this.state.name && this.state.price) {
+            this.props.actions.editCoffees(this.state);
+        }
+    }
     deleteCoffee: void = () => {
         this.props.actions.deleteCoffees(this.state.selectedCoffee);
         this.setState({
@@ -59,7 +65,7 @@ class App extends Component<Props, State> {
         const price: string = this.props.coffee[selectedCoffee].price;
         const name: string = this.props.coffee[selectedCoffee].name;
         this.setState({selectedCoffee, name, price});
-    }
+    };
 
     render() {
         return (
