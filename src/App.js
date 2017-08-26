@@ -1,3 +1,4 @@
+//@flow
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {bindActionCreators, type Dispatch} from 'redux';
@@ -36,24 +37,24 @@ class App extends Component<Props, State> {
         this.props.actions.getCoffees();
     }
 
-    setName: void = (name: string) => this.setState({name});
-    setPrice: void = (newPrice: string) => {
+    setName = (name: string) => this.setState({name});
+    setPrice = (newPrice: string) => {
         if (newPrice) {
             const price: number = parseFloat(newPrice, 2);
             this.setState({price});
         }
     };
-    addCoffee: void = () => {
+    addCoffee = () => {
         if (this.state.name && this.state.price) {
             this.props.actions.addCoffees(this.state);
         }
     }
-    editCoffee: void = () => {
+    editCoffee = () => {
         if (this.state.name && this.state.price) {
             this.props.actions.editCoffees(this.state);
         }
     }
-    deleteCoffee: void = () => {
+    deleteCoffee = () => {
         this.props.actions.deleteCoffees(this.state.selectedCoffee);
         this.setState({
             name: '',
@@ -61,7 +62,7 @@ class App extends Component<Props, State> {
             selectedCoffee: -1
         });
     };
-    selectCoffee: void = (selectedCoffee: number) => {
+    selectCoffee = (selectedCoffee: number) => {
         const price: string = this.props.coffee[selectedCoffee].price;
         const name: string = this.props.coffee[selectedCoffee].name;
         this.setState({selectedCoffee, name, price});
@@ -113,7 +114,7 @@ App.propTypes = {
     })
 };
 
-const mapStateToProps: {coffee: Props} = (state: Props) => ({
+const mapStateToProps = (state: Props) => ({
     coffee: state.coffee
 });
 

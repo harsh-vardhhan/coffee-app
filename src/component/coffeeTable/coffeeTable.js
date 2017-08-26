@@ -1,4 +1,4 @@
-import React, {type Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Table from 'grommet/components/Table';
 import TableRow from 'grommet/components/TableRow';
@@ -16,7 +16,7 @@ type TypeValue = {
     price: number
 };
 
-const CoffeeTable: Component<any> = ({coffee, selectCoffee}: TypeCoffeTable) => (
+const CoffeeTable = ({coffee, selectCoffee}: TypeCoffeTable) => (
     <Table
         selectable={true}
         onSelect={selectCoffee}

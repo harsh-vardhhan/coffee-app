@@ -1,7 +1,7 @@
-import React, {type Component} from 'react';
+import React from 'react';
 import Header from 'grommet/components/Header';
 
-const AppHeader: Component<any> = () => (
+const AppHeader = () => (
     <Header>
         <h1>{'Coffee Shop'}</h1>
     </Header>
