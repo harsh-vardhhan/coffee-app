@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import Table from 'grommet/components/Table';
@@ -11,11 +12,6 @@ type TypeCoffeTable = {
     }>
 };
 
-type TypeValue = {
-    name: string,
-    price: number
-};
-
 const CoffeeTable = ({coffee, selectCoffee}: TypeCoffeTable) => (
     <Table
         selectable={true}
@@ -23,7 +19,7 @@ const CoffeeTable = ({coffee, selectCoffee}: TypeCoffeTable) => (
     >
         <CoffeeTableHeader/>
         <tbody>
-            {coffee.map((value: TypeValue, i: number) => {
+            {coffee.map((value, i) => {
                 return (
                     <TableRow key={i}>
                         <td>{value.name}</td>
