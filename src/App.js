@@ -1,4 +1,3 @@
-//@flow
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {bindActionCreators, type Dispatch} from 'redux';
@@ -37,13 +36,13 @@ class App extends Component<Props, State> {
         this.props.actions.getCoffees();
     }
 
-    setName = (name: string) => this.setState({name});
+    setName = (name: string) => this.setState({name})
     setPrice = (newPrice: string) => {
         if (newPrice) {
             const price: number = parseFloat(newPrice, 2);
             this.setState({price});
         }
-    };
+    }
     addCoffee = () => {
         if (this.state.name && this.state.price) {
             this.props.actions.addCoffees(this.state);
@@ -61,12 +60,12 @@ class App extends Component<Props, State> {
             price: '',
             selectedCoffee: -1
         });
-    };
+    }
     selectCoffee = (selectedCoffee: number) => {
         const price: string = this.props.coffee[selectedCoffee].price;
         const name: string = this.props.coffee[selectedCoffee].name;
         this.setState({selectedCoffee, name, price});
-    };
+    }
 
     render() {
         return (
