@@ -18,7 +18,7 @@ type State = {
 type Props = {
     coffee: Array<{
         name: string,
-        price: string
+        price: number
     }>
 };
 

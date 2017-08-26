@@ -1,4 +1,3 @@
-//@flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import Table from 'grommet/components/Table';
