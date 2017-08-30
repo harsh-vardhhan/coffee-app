@@ -7,7 +7,12 @@ import Box from 'grommet/components/Box';
 import CoffeeList from './component/coffeeTable/coffeeList';
 import Form from './component/form/form';
 import AppHeader from './component/appHeader';
-import {getCoffees, addCoffees, deleteCoffees, editCoffees} from './actions/coffee';
+import {
+  getCoffees,
+  addCoffees,
+  deleteCoffees,
+  editCoffees
+} from './actions/coffee';
 
 type State = {
     name: string,
@@ -62,7 +67,7 @@ class App extends Component<Props, State> {
         });
     }
     selectCoffee = (selectedCoffee: number) => {
-        const price: string = this.props.coffee[selectedCoffee].price;
+        const price: number = this.props.coffee[selectedCoffee].price;
         const name: string = this.props.coffee[selectedCoffee].name;
         this.setState({selectedCoffee, name, price});
     }
