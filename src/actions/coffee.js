@@ -16,9 +16,9 @@ export const addCoffees = (coffee: Coffee) => (
     }
 );
 
-export const deleteCoffees = (coffee: number) => (
+export const deleteCoffees = (selectedCoffee: number) => (
     (dispatch) => {
-        dispatch({type: DELETE_COFFEE, coffee});
+        dispatch({type: DELETE_COFFEE, selectedCoffee});
     }
 );
 

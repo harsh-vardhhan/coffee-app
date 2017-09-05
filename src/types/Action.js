@@ -12,5 +12,6 @@ export type Action = {
         price: number,
         selectedCoffee: number
     },
+    selectedCoffee: number,
     type: string
 };

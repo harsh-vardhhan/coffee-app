@@ -3,18 +3,21 @@ import {ADD_COFFEE, DELETE_COFFEE, EDIT_COFFEE, GET_COFFEES} from '../constants/
 import type {Action} from '../types/Action';
 import type {State} from '../types/State';
 
-export const coffee = (state: State = [], action: Action) => {
-    switch (action.type) {
+export const coffeeReducer = (
+  state: State = [],
+  {type, coffee, coffees, selectedCoffee}: Action
+) => {
+    switch (type) {
     case GET_COFFEES:
-        return action.coffees;
+        return coffees;
     case ADD_COFFEE:
-        return [...state, action.coffee];
+        return [...state, coffee];
     case DELETE_COFFEE:
-        return state.filter((value, i) => i !== action.coffee);
+        return state.filter((value, i) => i !== selectedCoffee);
     case EDIT_COFFEE:
         return state.map((value, i) => {
-            if (i === action.coffee.selectedCoffee) {
-                return {...value, ...action.coffee};
+            if (i === coffee.selectedCoffee) {
+                return {...value, ...coffee};
             }
             return value;
         });

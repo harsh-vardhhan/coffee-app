@@ -62,7 +62,7 @@ class App extends Component<Props, State> {
         this.props.actions.deleteCoffees(this.state.selectedCoffee);
         this.setState({
             name: '',
-            price: '',
+            price: 0,
             selectedCoffee: -1
         });
     }
@@ -119,7 +119,7 @@ App.propTypes = {
 };
 
 const mapStateToProps = (state: Props) => ({
-    coffee: state.coffee
+    coffee: state.coffeeReducer
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<*>) => ({

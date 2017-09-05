@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import {coffee} from './coffee';
+import {coffeeReducer} from './coffee';
 
 export default combineReducers({
-    coffee
+    coffeeReducer
 });
