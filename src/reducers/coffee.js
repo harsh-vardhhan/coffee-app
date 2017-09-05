@@ -8,7 +8,7 @@ export const coffee = (state: State = [], action: Action) => {
     case GET_COFFEES:
         return action.coffees;
     case ADD_COFFEE:
-        return state.concat([action.coffee]);
+        return [...state, action.coffee];
     case DELETE_COFFEE:
         return state.filter((value, i) => i !== action.coffee);
     case EDIT_COFFEE:
