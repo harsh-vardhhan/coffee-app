@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {bindActionCreators, type Dispatch} from 'redux';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Split from 'grommet/components/Split';
 import Box from 'grommet/components/Box';
@@ -13,8 +13,9 @@ import {
   deleteCoffees,
   editCoffees
 } from './actions/coffee';
+import type {State} from './types/State';
 
-type State = {
+type AppState = {
     name: string,
     price: number,
     selectedCoffee: number
@@ -24,10 +25,16 @@ type Props = {
     coffee: Array<{
         name: string,
         price: number
-    }>
+    }>,
+    actions: {
+      getCoffees: Function,
+      addCoffees: Function,
+      editCoffees: Function,
+      deleteCoffees: Function
+    }
 };
 
-class App extends Component<Props, State> {
+class App extends Component<Props, AppState> {
     constructor(props: Props) {
         super(props);
         this.state = {
@@ -44,7 +51,7 @@ class App extends Component<Props, State> {
     setName = (name: string) => this.setState({name})
     setPrice = (newPrice: string) => {
         if (newPrice) {
-            const price: number = parseFloat(newPrice, 2);
+            const price = parseFloat(newPrice, 2);
             this.setState({price});
         }
     }
@@ -122,11 +129,11 @@ App.propTypes = {
     })
 };
 
-const mapStateToProps = (state: Props) => ({
+const mapStateToProps = (state: State) => ({
     coffee: state.coffeeReducer
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<*>) => ({
+const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators({
         getCoffees,
         addCoffees,

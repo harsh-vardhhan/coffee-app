@@ -1,10 +1,10 @@
 //@flow
 import {ADD_COFFEE, DELETE_COFFEE, EDIT_COFFEE, GET_COFFEES} from '../constants/coffee';
 import type {Action} from '../types/Action';
-import type {State} from '../types/State';
+import type {CoffeeReducer} from '../types/State';
 
 export const coffeeReducer = (
-  state: State = [],
+  state: CoffeeReducer = [],
   {type, coffee, coffees, selectedCoffee}: Action
 ) => {
     switch (type) {
