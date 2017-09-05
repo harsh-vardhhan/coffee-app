@@ -1,5 +1,4 @@
 //@flow
-//$FlowFixMe
 import axios from 'axios';
 import type {Coffees} from '../types/Coffees';
 
