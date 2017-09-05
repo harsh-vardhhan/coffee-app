@@ -49,13 +49,17 @@ class App extends Component<Props, State> {
         }
     }
     addCoffee = () => {
-        if (this.state.name && this.state.price) {
-            this.props.actions.addCoffees(this.state);
+        const name = this.state.name;
+        const price = this.state.price;
+        if (name && price) {
+            this.props.actions.addCoffees({name, price});
         }
     }
     editCoffee = () => {
-        if (this.state.name && this.state.price) {
-            this.props.actions.editCoffees(this.state, this.state.selectedCoffee);
+        const name = this.state.name;
+        const price = this.state.price;
+        if (name && price) {
+            this.props.actions.editCoffees({name, price}, this.state.selectedCoffee);
         }
     }
     deleteCoffee = () => {
