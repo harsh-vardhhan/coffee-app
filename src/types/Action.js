@@ -9,8 +9,7 @@ export type Action = {
     }>,
     coffee: {
         name: string,
-        price: number,
-        selectedCoffee: number
+        price: number
     },
     selectedCoffee: number,
     type: string

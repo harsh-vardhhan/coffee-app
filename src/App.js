@@ -55,7 +55,7 @@ class App extends Component<Props, State> {
     }
     editCoffee = () => {
         if (this.state.name && this.state.price) {
-            this.props.actions.editCoffees(this.state);
+            this.props.actions.editCoffees(this.state, this.state.selectedCoffee);
         }
     }
     deleteCoffee = () => {

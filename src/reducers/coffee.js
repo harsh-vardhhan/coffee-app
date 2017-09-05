@@ -16,7 +16,7 @@ export const coffeeReducer = (
         return state.filter((value, i) => i !== selectedCoffee);
     case EDIT_COFFEE:
         return state.map((value, i) => {
-            if (i === coffee.selectedCoffee) {
+            if (i === selectedCoffee) {
                 return {...value, ...coffee};
             }
             return value;

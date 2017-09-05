@@ -22,8 +22,8 @@ export const deleteCoffees = (selectedCoffee: number) => (
     }
 );
 
-export const editCoffees = (coffee: Coffee) => (
+export const editCoffees = (coffee: Coffee, selectedCoffee: number) => (
     (dispatch) => {
-        dispatch({type: EDIT_COFFEE, coffee});
+        dispatch({type: EDIT_COFFEE, coffee, selectedCoffee});
     }
 );
