@@ -83,8 +83,8 @@ class App extends Component<Props, AppState> {
         });
     }
     selectCoffee = (selectedCoffee: number) => {
-        const price: number = this.props.coffee[selectedCoffee].price;
-        const name: string = this.props.coffee[selectedCoffee].name;
+        const price = this.props.coffee[selectedCoffee].price;
+        const name = this.props.coffee[selectedCoffee].name;
         this.setState({selectedCoffee, name, price});
     }
 
