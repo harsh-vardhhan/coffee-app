@@ -71,11 +71,16 @@ class App extends Component<Props, AppState> {
         const name = this.state.name;
         const price = this.state.price;
         if (name && price) {
-            this.props.actions.editCoffees({name, price}, this.state.selectedCoffee);
+            this.props.actions.editCoffees(
+              {name, price},
+              this.state.selectedCoffee
+            );
         }
     }
     deleteCoffee = () => {
-        this.props.actions.deleteCoffees(this.state.selectedCoffee);
+        this.props.actions.deleteCoffees(
+          this.state.selectedCoffee
+        );
         this.setState({
             name: '',
             price: 0,
