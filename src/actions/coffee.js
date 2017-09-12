@@ -6,7 +6,7 @@ import type {Coffees} from '../types/Coffees';
 
 export const getCoffees = () => (
     async (dispatch: Function) => {
-        const coffees: Coffees = await coffeeApi.getCoffees();
+        const coffees: Coffees = await coffeeApi.getCoffeesMock();
         dispatch({type: GET_COFFEES, coffees});
     }
 );
