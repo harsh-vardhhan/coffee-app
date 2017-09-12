@@ -8,7 +8,7 @@ class coffeeApi {
     static getCoffees() {
         const success = ({data}: {data: Coffees}) => data;
         const error = () => [];
-        axios.get(coffeeUrl).then(success).catch(error);
+        return axios.get(coffeeUrl).then(success).catch(error);
     }
 
     static getCoffeesMock = () => coffeeMock;
