@@ -23,14 +23,12 @@ const coffeeMock = [
 
 class coffeeApi {
     static getCoffees() {
-        const onSuccess = ({data}: {data: Coffees}) => data;
-        const onError = () => [];
-        return axios.get(coffeeUrl).then(onSuccess).catch(onError);
+        const success = ({data}: {data: Coffees}) => data;
+        const error = () => [];
+        axios.get(coffeeUrl).then(success).catch(error);
     }
 
-    static getCoffeesMock() {
-        return coffeeMock;
-    }
+    static getCoffeesMock = () => coffeeMock;
 }
 
 export default coffeeApi;
