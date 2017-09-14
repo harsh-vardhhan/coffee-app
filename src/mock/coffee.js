@@ -1,3 +1,4 @@
+//@flow
 export const coffeeMock = [
     {
         id: 1,
