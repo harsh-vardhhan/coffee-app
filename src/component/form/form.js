@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import Box from 'grommet/components/Box';
@@ -7,7 +8,9 @@ import NumberInput from 'grommet/components/NumberInput';
 
 type TypeForm = {
     name: string,
-    price: number
+    price: number,
+    setName: Function,
+    setPrice: Function
 };
 
 type TypeName = {

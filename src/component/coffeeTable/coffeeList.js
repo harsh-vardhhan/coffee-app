@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import Box from 'grommet/components/Box';
@@ -8,7 +9,11 @@ type TypeCoffeeList = {
     coffee: Array<{
         name: string,
         price: number
-    }>
+    }>,
+    addCoffee: Function,
+    deleteCoffee: Function,
+    editCoffee: Function,
+    selectCoffee: Function
 };
 
 const CoffeeList = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}

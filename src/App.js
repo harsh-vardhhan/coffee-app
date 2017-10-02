@@ -3,11 +3,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {bindActionCreators, type Dispatch} from 'redux';
 import {connect} from 'react-redux';
-
-//$FlowFixMe
 import Split from 'grommet/components/Split';
-
-//$FlowFixMe
 import Box from 'grommet/components/Box';
 import CoffeeList from './component/coffeeTable/coffeeList';
 import Form from './component/form/form';
