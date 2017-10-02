@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import Table from 'grommet/components/Table';
@@ -8,7 +9,8 @@ type TypeCoffeTable = {
     coffee : Array<{
         name: string,
         price: number
-    }>
+    }>,
+    selectCoffee: Function
 };
 
 const CoffeeTable = ({coffee, selectCoffee}: TypeCoffeTable) => (
