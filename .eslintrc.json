@@ -232,7 +232,7 @@
         "react/no-find-dom-node": 1,
         "react/forbid-component-props": 0,
         "react/no-danger-with-children": 2,
-        "react/no-unused-prop-types": [1, {"skipShapeProps": true}],
+        "react/no-unused-prop-types": [2, {"skipShapeProps": true}],
         "react/style-prop-object": 2,
         "react/no-children-prop": 2,
         "react/no-unescaped-entities": 2,
