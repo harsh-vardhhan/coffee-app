@@ -12,6 +12,8 @@ declare module 'redux' {
   */
 
   declare type DispatchAPI<A> = (action: A) => A;
+  
+  //$FlowFixMe
   declare type Dispatch<A: { type: $Subtype<string> }> = DispatchAPI<A>;
 
   declare type MiddlewareAPI<S, A, D = Dispatch<A>> = {
