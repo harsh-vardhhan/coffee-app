@@ -5,16 +5,16 @@ import {bindActionCreators, type Dispatch} from 'redux';
 import {connect} from 'react-redux';
 import Split from 'grommet/components/Split';
 import Box from 'grommet/components/Box';
-import CoffeeList from './component/coffeeTable/coffeeList';
-import Form from './component/form/form';
-import AppHeader from './component/appHeader';
+import CoffeeList from '../component/coffeeTable/coffeeList';
+import Form from '../component/form/form';
+import AppHeader from '../component/appHeader/appHeader';
 import {
   getCoffees,
   addCoffees,
   deleteCoffees,
   editCoffees
-} from './actions/coffee';
-import type {State} from './types/State';
+} from '../actions/coffee';
+import type {State} from '../types/State';
 
 type AppState = {
     name: string,
@@ -35,7 +35,7 @@ type Props = {
     }
 };
 
-class App extends Component<Props, AppState> {
+class CoffeePage extends Component<Props, AppState> {
     constructor(props: Props) {
         super(props);
         this.state = {
@@ -121,7 +121,7 @@ class App extends Component<Props, AppState> {
     }
 }
 
-App.propTypes = {
+CoffeePage.propTypes = {
     coffee: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number,
         name: PropTypes.string.isRequired,
@@ -151,4 +151,4 @@ const mapDispatchToProps = (dispatch: Dispatch<*>) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(App);
+)(CoffeePage);

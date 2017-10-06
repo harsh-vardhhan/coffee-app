@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 //$FlowFixMe
 import './../node_modules/grommet/grommet-hpe.min.css';
-import App from './App';
+import App from './container/CoffeePage';
 import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
 
