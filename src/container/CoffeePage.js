@@ -29,9 +29,9 @@ type Props = {
     }>,
     actions: {
       getCoffees: Function,
-      addCoffees: Function,
+      deleteCoffees: Function,
       editCoffees: Function,
-      deleteCoffees: Function
+      addCoffees: Function
     }
 };
 
