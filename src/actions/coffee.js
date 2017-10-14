@@ -3,12 +3,12 @@ import coffeeApi from '../api/coffee';
 import {ADD_COFFEE, DELETE_COFFEE, EDIT_COFFEE, GET_COFFEES} from '../constants/coffee';
 import type {Coffee} from '../types/Coffee';
 import type {Coffees} from '../types/Coffees';
-import type {Dispatch} from 'redux';
-
-type DispatchGetCoffees = Dispatch<{type: string, coffees: Coffees}>;
-type DispatchAddCoffees = Dispatch<{type: string, coffee: Coffee}>;
-type DispatchDeleteCoffees = Dispatch<{type: string, selectedCoffee: number}>;
-type DispatchEditCoffees = Dispatch<{type: string, coffee: Coffee, selectedCoffee: number}>;
+import type {
+  DispatchGetCoffees,
+  DispatchAddCoffees,
+  DispatchDeleteCoffees,
+  DispatchEditCoffees
+} from '../types/Dispatch';
 
 export const getCoffees = () => (
     async (dispatch: DispatchGetCoffees) => {

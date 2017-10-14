@@ -100,7 +100,6 @@ class CoffeePage extends Component<Props, AppState> {
             setName,
             setPrice
         } = this;
-
         return (
             <div className='App'>
                 <AppHeader/>
@@ -147,7 +146,7 @@ CoffeePage.propTypes = {
 };
 
 const mapStateToProps = (state: State) => ({
-    coffee: state.Coffees
+    coffee: state.coffeeReducer
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<*>) => ({
