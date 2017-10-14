@@ -50,12 +50,14 @@ class CoffeePage extends Component<Props, AppState> {
     }
 
     setName = (name: string) => this.setState({name})
+
     setPrice = (newPrice: string) => {
         if (newPrice) {
             const price = parseFloat(newPrice);
             this.setState({price});
         }
     }
+
     addCoffee = () => {
         const name = this.state.name;
         const price = this.state.price;
@@ -63,6 +65,7 @@ class CoffeePage extends Component<Props, AppState> {
             this.props.actions.addCoffees({name, price});
         }
     }
+
     editCoffee = () => {
         const name = this.state.name;
         const price = this.state.price;
@@ -73,6 +76,7 @@ class CoffeePage extends Component<Props, AppState> {
             );
         }
     }
+
     deleteCoffee = () => {
         this.props.actions.deleteCoffees(
           this.state.selectedCoffee
@@ -83,6 +87,7 @@ class CoffeePage extends Component<Props, AppState> {
             selectedCoffee: -1
         });
     }
+
     selectCoffee = (selectedCoffee: number) => {
         const price = this.props.coffee[selectedCoffee].price;
         const name = this.props.coffee[selectedCoffee].name;
@@ -90,6 +95,17 @@ class CoffeePage extends Component<Props, AppState> {
     }
 
     render() {
+        const {coffee} = this.props;
+        const {name, price} = this.state;
+        const {
+            deleteCoffee,
+            addCoffee,
+            editCoffee,
+            selectCoffee,
+            setName,
+            setPrice
+        } = this;
+
         return (
             <div className='App'>
                 <AppHeader/>
@@ -98,17 +114,17 @@ class CoffeePage extends Component<Props, AppState> {
                     flex='right'
                 >
                     <CoffeeList
-                        coffee={this.props.coffee}
-                        deleteCoffee={this.deleteCoffee}
-                        addCoffee={this.addCoffee}
-                        editCoffee={this.editCoffee}
-                        selectCoffee={this.selectCoffee}
+                        coffee={coffee}
+                        deleteCoffee={deleteCoffee}
+                        addCoffee={addCoffee}
+                        editCoffee={editCoffee}
+                        selectCoffee={selectCoffee}
                     />
                     <Form
-                        name={this.state.name}
-                        price={this.state.price}
-                        setName={this.setName}
-                        setPrice={this.setPrice}
+                        name={name}
+                        price={price}
+                        setName={setName}
+                        setPrice={setPrice}
                     />
                     <Box
                         justify='center'
