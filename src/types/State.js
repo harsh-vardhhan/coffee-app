@@ -1,10 +1,6 @@
 //@flow
-export type CoffeeReducer = Array<{
-    id: number,
-    name: string,
-    price: number
-}>
+import type {Coffees} from '../types/Coffees';
 
 export type State = {
-  coffeeReducer: CoffeeReducer
+  Coffees: Coffees
 };

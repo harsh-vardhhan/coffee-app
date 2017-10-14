@@ -147,7 +147,7 @@ CoffeePage.propTypes = {
 };
 
 const mapStateToProps = (state: State) => ({
-    coffee: state.coffeeReducer
+    coffee: state.Coffees
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<*>) => ({

@@ -1,16 +1,10 @@
 //@flow
+import type {Coffee} from '../types/Coffee';
+import type {Coffees} from '../types/Coffees';
+
 export type Action = {
-    coffees: Array<{
-        coffee: {
-            id: number,
-            name: string,
-            price: string
-        }
-    }>,
-    coffee: {
-        name: string,
-        price: number
-    },
+    coffees: Coffees,
+    coffee: Coffee,
     selectedCoffee: number,
     type: string
 };
