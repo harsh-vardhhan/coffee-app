@@ -59,28 +59,22 @@ class CoffeePage extends Component<Props, AppState> {
     }
 
     addCoffee = () => {
-        const name = this.state.name;
-        const price = this.state.price;
+        const {name, price} = this.state;
         if (name && price) {
             this.props.actions.addCoffees({name, price});
         }
     }
 
     editCoffee = () => {
-        const name = this.state.name;
-        const price = this.state.price;
+        const {name, price, selectedCoffee} = this.state;
         if (name && price) {
-            this.props.actions.editCoffees(
-              {name, price},
-              this.state.selectedCoffee
-            );
+            this.props.actions.editCoffees({name, price}, selectedCoffee);
         }
     }
 
     deleteCoffee = () => {
-        this.props.actions.deleteCoffees(
-          this.state.selectedCoffee
-        );
+        const {selectedCoffee} = this.state;
+        this.props.actions.deleteCoffees(selectedCoffee);
         this.setState({
             name: '',
             price: 0,
@@ -89,8 +83,9 @@ class CoffeePage extends Component<Props, AppState> {
     }
 
     selectCoffee = (selectedCoffee: number) => {
-        const price = this.props.coffee[selectedCoffee].price;
-        const name = this.props.coffee[selectedCoffee].name;
+        const {coffee} = this.props;
+        const price = coffee[selectedCoffee].price;
+        const name = coffee[selectedCoffee].name;
         this.setState({selectedCoffee, name, price});
     }
 
