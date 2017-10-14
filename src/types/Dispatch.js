@@ -1,3 +1,4 @@
+//@flow
 import type {Dispatch} from 'redux';
 import type {Coffee} from '../types/Coffee';
 import type {Coffees} from '../types/Coffees';
