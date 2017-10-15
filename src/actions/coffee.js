@@ -4,33 +4,33 @@ import {ADD_COFFEE, DELETE_COFFEE, EDIT_COFFEE, GET_COFFEES} from '../constants/
 import type {Coffee} from '../types/Coffee';
 import type {Coffees} from '../types/Coffees';
 import type {
-  DispatchGetCoffees,
-  DispatchAddCoffees,
-  DispatchDeleteCoffees,
-  DispatchEditCoffees
+  GET_COFFEES_TYPE,
+  ADD_COFFEE_TYPE,
+  DELETE_COFFEE_TYPE,
+  EDIT_COFFEE_TYPE
 } from '../types/Dispatch';
 
 export const getCoffees = () => (
-    async (dispatch: DispatchGetCoffees) => {
+    async (dispatch: GET_COFFEES_TYPE) => {
         const coffees: Coffees = await coffeeApi.getCoffeesMock();
         dispatch({type: GET_COFFEES, coffees});
     }
 );
 
 export const addCoffees = (coffee: Coffee) => (
-    (dispatch: DispatchAddCoffees) => {
+    (dispatch: ADD_COFFEE_TYPE) => {
         dispatch({type: ADD_COFFEE, coffee});
     }
 );
 
 export const deleteCoffees = (selectedCoffee: number) => (
-    (dispatch: DispatchDeleteCoffees) => {
+    (dispatch: DELETE_COFFEE_TYPE) => {
         dispatch({type: DELETE_COFFEE, selectedCoffee});
     }
 );
 
 export const editCoffees = (coffee: Coffee, selectedCoffee: number) => (
-    (dispatch: DispatchEditCoffees) => {
+    (dispatch: EDIT_COFFEE_TYPE) => {
         dispatch({type: EDIT_COFFEE, coffee, selectedCoffee});
     }
 );
