@@ -12,8 +12,6 @@ import configureStore from './store/configureStore';
 const store = configureStore();
 
 ReactDOM.render(
-
-    //$FlowFixMe
     <Provider store={store}>
         <App/>
     </Provider>

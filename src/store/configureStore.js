@@ -9,9 +9,9 @@ import rootReducer from '../reducers';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import type {State} from '../types/State';
 
-const configureStore = (initialState: State): Store<*> => (
+const configureStore = (initialState: State): Store<*, *> => (
 
-    //$FlowFixMe
+//$FlowFixMe
     createStore(
         rootReducer,
         initialState,
