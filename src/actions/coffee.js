@@ -1,5 +1,5 @@
 //@flow
-import coffeeApi from '../api/coffee';
+import {getCoffeesMock} from '../api/coffee';
 import {GET_COFFEES, ADD_COFFEE, DELETE_COFFEE, EDIT_COFFEE} from '../constants/coffee';
 import type {Coffee} from '../types/Coffee';
 import type {Coffees} from '../types/Coffees';
@@ -8,7 +8,7 @@ import type {Action} from '../types/Action';
 
 export const getCoffees = () => (
     async (dispatch: Dispatch<Action>) => {
-        const coffees: Coffees = await coffeeApi.getCoffeesMock();
+        const coffees: Coffees = await getCoffeesMock();
         dispatch({type: GET_COFFEES, coffees});
     }
 );
