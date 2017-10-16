@@ -6,8 +6,8 @@ import {
   GET_COFFEES
 } from '../constants/coffee';
 import type {Action} from '../types/Action';
-
 import type {Coffees} from '../types/Coffees';
+
 export const coffeeReducer = (
   state: Coffees = [],
   action : Action
@@ -18,13 +18,13 @@ export const coffeeReducer = (
     case ADD_COFFEE:
         return [...state, action.coffee];
     case DELETE_COFFEE:
-        //$FlowFixMe
-        return state.filter((value, i) => i !== action.selectedCoffee);
+        const selectedCoffee = action.selectedCoffee;
+        return state.filter((value, i) => i !== selectedCoffee);
     case EDIT_COFFEE:
+        const coffee = action.coffee;
         return state.map((value, i) => {
             if (i === action.selectedCoffee) {
-                //$FlowFixMe
-                return {...value, ...action.coffee};
+                return {...value, ...coffee};
             }
             return value;
         });
