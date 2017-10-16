@@ -1,5 +1,5 @@
 //@flow
-export type Coffee = {
+export type Coffee = {|
     name: string,
     price: number
-};
+|};
