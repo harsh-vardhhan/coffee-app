@@ -27,7 +27,6 @@ export const deleteCoffees = (selectedCoffee: number) => (
 
 export const editCoffees = (coffee: Coffee, selectedCoffee: number) => (
     (dispatch: Dispatch<Action>) => {
-        //$FlowFixMe
         dispatch({type: EDIT_COFFEE, coffee, selectedCoffee});
     }
 );

@@ -6,8 +6,8 @@ import {
   GET_COFFEES
 } from '../constants/coffee';
 import type {Action} from '../types/Action';
-import type {Coffees} from '../types/Coffees';
 
+import type {Coffees} from '../types/Coffees';
 export const coffeeReducer = (
   state: Coffees = [],
   action : Action
