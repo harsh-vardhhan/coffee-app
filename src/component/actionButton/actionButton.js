@@ -5,9 +5,9 @@ import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 
 type TypeActionButton = {
-    addCoffee: Function,
-    deleteCoffee: Function,
-    editCoffee: Function
+    addCoffee: () => void,
+    deleteCoffee: () => void,
+    editCoffee: () => void
 };
 
 const ActionButtons = ({addCoffee, deleteCoffee, editCoffee}: TypeActionButton) => (
@@ -36,10 +36,11 @@ const ActionButtons = ({addCoffee, deleteCoffee, editCoffee}: TypeActionButton) 
     </Box>
 );
 
+const {func} = PropTypes;
 ActionButtons.propTypes = {
-    addCoffee: PropTypes.func,
-    deleteCoffee: PropTypes.func,
-    editCoffee: PropTypes.func
+    addCoffee: func,
+    deleteCoffee: func,
+    editCoffee: func
 };
 
 export default ActionButtons;

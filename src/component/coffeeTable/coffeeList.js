@@ -10,10 +10,10 @@ type TypeCoffeeList = {
         name: string,
         price: number
     }>,
-    addCoffee: Function,
-    deleteCoffee: Function,
-    editCoffee: Function,
-    selectCoffee: Function
+    addCoffee: () => void,
+    deleteCoffee: () => void,
+    editCoffee: () => void,
+    selectCoffee: (number) => void
 };
 
 const CoffeeList = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}
@@ -35,12 +35,13 @@ const CoffeeList = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}
       </Box>
 );
 
+const {array, func} = PropTypes;
 CoffeeList.propTypes = {
-    coffee: PropTypes.array,
-    addCoffee: PropTypes.func,
-    deleteCoffee: PropTypes.func,
-    editCoffee: PropTypes.func,
-    selectCoffee: PropTypes.func
+    coffee: array,
+    addCoffee: func,
+    deleteCoffee: func,
+    editCoffee: func,
+    selectCoffee: func
 };
 
 export default CoffeeList;

@@ -9,8 +9,8 @@ import NumberInput from 'grommet/components/NumberInput';
 type TypeForm = {
     name: string,
     price: number,
-    setName: Function,
-    setPrice: Function
+    setName: (string) => void,
+    setPrice: (string) => void
 };
 
 type TypeName = {
@@ -49,11 +49,12 @@ const Form = ({name, price, setName, setPrice}: TypeForm) => (
     </Box>
 );
 
+const {number, string, func} = PropTypes;
 Form.propTypes = {
-    name: PropTypes.string,
-    price: PropTypes.number,
-    setName: PropTypes.func,
-    setPrice: PropTypes.func
+    name: string,
+    price: number,
+    setName: func,
+    setPrice: func
 };
 
 export default Form;

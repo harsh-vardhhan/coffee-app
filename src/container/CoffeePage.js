@@ -140,7 +140,6 @@ class CoffeePage extends Component<Props, AppState> {
 }
 
 const {shape, number, string, arrayOf, func} = PropTypes;
-
 CoffeePage.propTypes = {
     coffee: arrayOf(shape({
         id: number,

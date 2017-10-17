@@ -10,7 +10,7 @@ type TypeCoffeTable = {
         name: string,
         price: number
     }>,
-    selectCoffee: Function
+    selectCoffee: (number) => void
 };
 
 const CoffeeTable = ({coffee, selectCoffee}: TypeCoffeTable) => (
@@ -32,9 +32,10 @@ const CoffeeTable = ({coffee, selectCoffee}: TypeCoffeTable) => (
     </Table>
 );
 
+const {array, func} = PropTypes;
 CoffeeTable.propTypes = {
-    coffee: PropTypes.array,
-    selectCoffee: PropTypes.func
+    coffee: array,
+    selectCoffee: func
 };
 
 export default CoffeeTable;
