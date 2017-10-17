@@ -15,6 +15,8 @@ import {
   editCoffees
 } from '../actions/coffee';
 import type {State} from '../types/State';
+import type {Action} from '../types/Action';
+import type {Coffee} from '../types/Coffee';
 
 type AppState = {
     name: string,
@@ -28,10 +30,10 @@ type Props = {
         price: number
     }>,
     actions: {
-      getCoffees: Function,
-      deleteCoffees: Function,
-      editCoffees: Function,
-      addCoffees: Function
+      getCoffees: () => Action,
+      deleteCoffees: (number) => Action,
+      editCoffees: (Coffee, number) => Action,
+      addCoffees: (Coffee) => Action,
     }
 };
 
@@ -149,7 +151,7 @@ const mapStateToProps = (state: State) => ({
     coffee: state.coffeeReducer
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<*>) => ({
+const mapDispatchToProps = (dispatch: Dispatch<State, Action>) => ({
     actions: bindActionCreators({
         getCoffees,
         addCoffees,
