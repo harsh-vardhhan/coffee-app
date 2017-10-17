@@ -15,7 +15,13 @@ import {
   editCoffees
 } from '../actions/coffee';
 import type {State} from '../types/State';
-import type {Action} from '../types/Action';
+import type {
+  Action,
+  GET_COFFEES,
+  ADD_COFFEE,
+  DELETE_COFFEE,
+  EDIT_COFFEE
+} from '../types/Action';
 import type {Coffee} from '../types/Coffee';
 
 type AppState = {
@@ -30,10 +36,10 @@ type Props = {
         price: number
     }>,
     actions: {
-      getCoffees: () => Action,
-      deleteCoffees: (number) => Action,
-      editCoffees: (Coffee, number) => Action,
-      addCoffees: (Coffee) => Action,
+      getCoffees: () => GET_COFFEES,
+      deleteCoffees: (number) => DELETE_COFFEE,
+      editCoffees: (Coffee, number) => EDIT_COFFEE,
+      addCoffees: (Coffee) => ADD_COFFEE,
     }
 };
 
@@ -133,17 +139,19 @@ class CoffeePage extends Component<Props, AppState> {
     }
 }
 
+const {shape, number, string, arrayOf, func} = PropTypes;
+
 CoffeePage.propTypes = {
-    coffee: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
-        name: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired
+    coffee: arrayOf(shape({
+        id: number,
+        name: string.isRequired,
+        price: number.isRequired
     })),
-    actions: PropTypes.shape({
-        getCoffees: PropTypes.func.isRequired,
-        addCoffees: PropTypes.func.isRequired,
-        deleteCoffees: PropTypes.func.isRequired,
-        editCoffees: PropTypes.func.isRequired
+    actions: shape({
+        getCoffees: func.isRequired,
+        addCoffees: func.isRequired,
+        deleteCoffees: func.isRequired,
+        editCoffees: func.isRequired
     })
 };
 
