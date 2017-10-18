@@ -159,6 +159,8 @@ const mapStateToProps = (state: State) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<State, Action>) => ({
+
+    //$FlowFixMe
     actions: bindActionCreators({
         getCoffees,
         addCoffees,
