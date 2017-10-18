@@ -17,10 +17,10 @@ import {
 import type {State} from '../types/State';
 import type {
   Action,
-  GET_COFFEES,
-  ADD_COFFEE,
-  DELETE_COFFEE,
-  EDIT_COFFEE
+  GET_COFFEES_ACTION,
+  ADD_COFFEE_ACTION,
+  DELETE_COFFEE_ACTION,
+  EDIT_COFFEE_ACTION
 } from '../types/Action';
 import type {Coffee} from '../types/Coffee';
 
@@ -36,10 +36,10 @@ type Props = {
         price: number
     }>,
     actions: {
-      getCoffees: () => GET_COFFEES,
-      deleteCoffees: (number) => DELETE_COFFEE,
-      editCoffees: (Coffee, number) => EDIT_COFFEE,
-      addCoffees: (Coffee) => ADD_COFFEE,
+      getCoffees: () => GET_COFFEES_ACTION,
+      deleteCoffees: (number) => DELETE_COFFEE_ACTION,
+      editCoffees: (Coffee, number) => EDIT_COFFEE_ACTION,
+      addCoffees: (Coffee) => ADD_COFFEE_ACTION,
     }
 };
 
