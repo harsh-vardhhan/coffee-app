@@ -15,33 +15,8 @@ import {
   editCoffees
 } from '../actions/coffee';
 import type {State} from '../types/State';
-import type {
-  Action,
-  GET_COFFEES_ACTION,
-  ADD_COFFEE_ACTION,
-  DELETE_COFFEE_ACTION,
-  EDIT_COFFEE_ACTION
-} from '../types/Action';
-import type {Coffee} from '../types/Coffee';
-
-type AppState = {
-    name: string,
-    price: number,
-    selectedCoffee: number
-};
-
-type Props = {
-    coffee: Array<{
-        name: string,
-        price: number
-    }>,
-    actions: {
-      getCoffees: () => GET_COFFEES_ACTION,
-      deleteCoffees: (number) => DELETE_COFFEE_ACTION,
-      editCoffees: (Coffee, number) => EDIT_COFFEE_ACTION,
-      addCoffees: (Coffee) => ADD_COFFEE_ACTION,
-    }
-};
+import type {Action} from '../types/Action';
+import type {AppState, Props} from '../types/CoffeePage';
 
 class CoffeePage extends Component<Props, AppState> {
     constructor(props: Props) {
