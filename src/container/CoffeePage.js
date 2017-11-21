@@ -1,6 +1,6 @@
 //@flow
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import {shape, number, string, arrayOf, func} from 'prop-types';
 import {bindActionCreators, type Dispatch} from 'redux';
 import {connect} from 'react-redux';
 import Split from 'grommet/components/Split';
@@ -114,7 +114,6 @@ class CoffeePage extends Component<Props, AppState> {
     }
 }
 
-const {shape, number, string, arrayOf, func} = PropTypes;
 CoffeePage.propTypes = {
     coffee: arrayOf(shape({
         id: number,
