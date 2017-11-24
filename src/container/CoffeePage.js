@@ -1,7 +1,7 @@
 //@flow
 import React, {Component} from 'react';
 import {shape, number, string, arrayOf, func} from 'prop-types';
-import {bindActionCreators, type Dispatch} from 'redux';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Split from 'grommet/components/Split';
 import Box from 'grommet/components/Box';
@@ -15,7 +15,7 @@ import {
   editCoffees
 } from '../actions/coffee';
 import type {State} from '../types/State';
-import type {Action} from '../types/Action';
+import type {Dispatch} from '../types/Store';
 import type {AppState, Props} from '../types/CoffeePage';
 
 class CoffeePage extends Component<Props, AppState> {
@@ -132,7 +132,7 @@ const mapStateToProps = (state: State) => ({
     coffee: state.coffeeReducer
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<State, Action>) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
 
     //$FlowFixMe
     actions: bindActionCreators({
