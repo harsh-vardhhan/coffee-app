@@ -1,6 +1,6 @@
 //@flow
 import React from 'react';
-import PropTypes from 'prop-types';
+import {array, func} from 'prop-types';
 import Box from 'grommet/components/Box';
 import ActionButton from '../actionButton/actionButton';
 import CoffeeTable from '../coffeeTable/coffeeTable';
@@ -35,7 +35,6 @@ const CoffeeList = ({coffee, addCoffee, deleteCoffee, editCoffee, selectCoffee}
       </Box>
 );
 
-const {array, func} = PropTypes;
 CoffeeList.propTypes = {
     coffee: array,
     addCoffee: func,

@@ -1,6 +1,6 @@
 //@flow
 import React from 'react';
-import PropTypes from 'prop-types';
+import {func} from 'prop-types';
 import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 
@@ -36,7 +36,6 @@ const ActionButtons = ({addCoffee, deleteCoffee, editCoffee}: TypeActionButton) 
     </Box>
 );
 
-const {func} = PropTypes;
 ActionButtons.propTypes = {
     addCoffee: func,
     deleteCoffee: func,

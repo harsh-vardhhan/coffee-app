@@ -1,6 +1,6 @@
 //@flow
 import React from 'react';
-import PropTypes from 'prop-types';
+import {number, string, func} from 'prop-types';
 import Box from 'grommet/components/Box';
 import TextInput from 'grommet/components/TextInput';
 import FormField from 'grommet/components/FormField';
@@ -49,7 +49,6 @@ const Form = ({name, price, setName, setPrice}: TypeForm) => (
     </Box>
 );
 
-const {number, string, func} = PropTypes;
 Form.propTypes = {
     name: string,
     price: number,

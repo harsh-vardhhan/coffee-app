@@ -1,6 +1,6 @@
 //@flow
 import React from 'react';
-import PropTypes from 'prop-types';
+import {array, func} from 'prop-types';
 import Table from 'grommet/components/Table';
 import TableRow from 'grommet/components/TableRow';
 import CoffeeTableHeader from './coffeeTableHeader';
@@ -32,7 +32,6 @@ const CoffeeTable = ({coffee, selectCoffee}: TypeCoffeTable) => (
     </Table>
 );
 
-const {array, func} = PropTypes;
 CoffeeTable.propTypes = {
     coffee: array,
     selectCoffee: func
