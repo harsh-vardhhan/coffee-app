@@ -1,6 +1,5 @@
 //@flow
 import React, {Component} from 'react';
-import {shape, number, string, arrayOf, func} from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Split from 'grommet/components/Split';
@@ -17,6 +16,7 @@ import {
 import type {State} from '../types/State';
 import type {Dispatch} from '../types/Store';
 import type {AppState, Props} from '../types/CoffeePage';
+import {CoffeePageType} from '../propTypes/coffeePage';
 
 class CoffeePage extends Component<Props, AppState> {
     constructor(props: Props) {
@@ -32,9 +32,9 @@ class CoffeePage extends Component<Props, AppState> {
         this.props.actions.getCoffees();
     }
 
-    setName = (name: string) => this.setState({name})
+    setName = (name) => this.setState({name})
 
-    setPrice = (newPrice: string) => {
+    setPrice = (newPrice) => {
         if (newPrice) {
             const price = parseFloat(newPrice);
             this.setState({price});
@@ -65,7 +65,7 @@ class CoffeePage extends Component<Props, AppState> {
         });
     }
 
-    selectCoffee = (selectedCoffee: number) => {
+    selectCoffee = (selectedCoffee) => {
         const {coffee} = this.props;
         const price = coffee[selectedCoffee].price;
         const name = coffee[selectedCoffee].name;
@@ -114,19 +114,7 @@ class CoffeePage extends Component<Props, AppState> {
     }
 }
 
-CoffeePage.propTypes = {
-    coffee: arrayOf(shape({
-        id: number,
-        name: string.isRequired,
-        price: number.isRequired
-    })),
-    actions: shape({
-        getCoffees: func.isRequired,
-        addCoffees: func.isRequired,
-        deleteCoffees: func.isRequired,
-        editCoffees: func.isRequired
-    })
-};
+CoffeePage.propTypes = CoffeePageType.isRequired;
 
 const mapStateToProps = (state: State) => ({
     coffee: state.coffeeReducer
